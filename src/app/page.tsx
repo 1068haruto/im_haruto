@@ -1,4 +1,5 @@
-import Image from "next/image";
+// Imageコンポーネントを使って画像を表示するまでコメントアウトとする
+// import Image from "next/image";
 
 export default function Home() {
   return (

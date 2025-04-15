@@ -8,12 +8,7 @@ export default function Home() {
         Webエンジニアとして成長中のim_harutoです。<br />
         Next.jsやTypeScript、Dockerを使った開発に取り組んでいます。
       </p>
-      <a
-        href="https://github.com/1068haruto"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-blue-500 underline"
-      >
+      <a href="https://github.com/1068haruto" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">
         GitHubを見る →
       </a>
     </main>

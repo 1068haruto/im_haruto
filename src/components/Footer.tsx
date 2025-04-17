@@ -1,9 +1,11 @@
-import "@/styles/global.scss";
+import React from "react";
 
-export default function Footer() {
+const Footer: React.FC = () => {
   return (
-		<footer>
-  		&copy; 2025 im_haruto
-		</footer>
-	);
-}
+    <footer>
+      &copy; 2025 im_haruto
+    </footer>
+  );
+};
+
+export default Footer;

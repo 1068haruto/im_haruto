@@ -1,6 +1,6 @@
-import "@/styles/global.scss";
+import React from "react";
 
-export default function Header() {
+const Header: React.FC = () => {
   return (
     <header>
       <nav>
@@ -12,4 +12,6 @@ export default function Header() {
       </nav>
     </header>
   );
-}
+};
+
+export default Header;

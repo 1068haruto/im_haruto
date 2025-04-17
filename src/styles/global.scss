@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 html {
   scroll-behavior: smooth;
 }
@@ -6,10 +8,10 @@ body {
   font-family: 'Helvetica Neue', sans-serif;
   background-color: white;
 
-	.section-anchor-offset {
-		padding-top: 64px;
-		margin-top: -64px;
-	}
+  .section-anchor-offset {
+    padding-top: 64px;
+    margin-top: -64px;
+  }
 
 	header {
 		position: fixed;
@@ -48,4 +50,16 @@ body {
 		font-size: 0.875rem; /* text-sm相当 */
 		color: #718096;    /* text-gray-600相当 */
 	}
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
 }

@@ -1,7 +1,9 @@
-// Imageコンポーネントを使って画像を表示するまでコメントアウトとする
 // import Image from "next/image";
+// Imageコンポーネントを使って画像を表示するまでコメントアウトとする
 
-export default function Home() {
+import React from "react";
+
+const Home: React.FC = () => {
   return (
     <>
       <main className="text-gray-600 text-center">
@@ -39,4 +41,6 @@ export default function Home() {
       </main>
     </>
   );
-}
+};
+
+export default Home;

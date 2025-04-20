@@ -1,0 +1,62 @@
+.selfintro {
+	padding: 4rem 2rem;
+
+	&-heading {
+		font-size: 2rem;
+		margin-bottom: 2rem;
+		font-weight: bold;
+		text-align: center; // 中央揃え
+	}
+
+	&-content {
+    display: flex;           // フレックスボックスで配置
+    flex-direction: row;     // フレックスアイテムを横並びにする
+    align-items: flex-start; // アイテムを上揃えにする
+    justify-content: center; // コンテンツを中央に配置
+    max-width: 1000px;       // セクションの最大幅
+    margin: 0 auto;          // セクションを左右中央に配置
+    gap: 3rem;               // 写真とテキストの間の余白
+
+    @media (max-width: 768px) { // 画面幅が768px以下の場合
+      flex-direction: column;   // フレックスアイテムを縦並びにする
+      align-items: center;      // アイテムを中央揃えにする
+      text-align: left;         // テキストを左揃えにする
+    }
+  }
+
+	&-image-wrapper {
+    flex: 0 0 auto;            // サイズを固定
+    display: flex;             // フレックスボックスで配置
+    justify-content: flex-end; // 画像を右端に配置
+
+    .selfintro-image {
+      border-radius: 1rem;     // 画像の角を1rem丸める
+      object-fit: cover;       // 画像のアスペクト比を保ちながら、要素を埋める
+    }
+  }
+
+	&-text {
+    flex: 1;          // 残りのスペースを占有
+    font-size: 1rem;
+    line-height: 1.6; // 行の高さを1.6倍に設定
+    text-align: left; // テキストを左揃えにする
+
+    .selfintro-item {
+      margin-bottom: 1.5rem;
+
+      h3 {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+      }
+
+      ul {
+        padding-left: 1rem;
+
+        li {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}

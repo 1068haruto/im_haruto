@@ -21,7 +21,7 @@
   justify-content: space-between; // 子要素の間にスペースを均等に配置
   align-items: center;            // 子要素を縦の中央に揃える
   position: relative;             // 子要素を絶対位置で配置するための基準位置
-  margin: 40px 0;
+  margin: 40px;
 }
 
 .timeline-item:nth-child(odd) {

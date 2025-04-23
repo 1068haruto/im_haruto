@@ -1,0 +1,38 @@
+.contact-section {
+  position: relative; // 親要素を相対位置に設定
+
+  form {
+    max-width: 600px; // フォームの最大幅
+    margin: 0 auto;   // フォームを中央に配置
+
+    input, textarea {
+      width: 100%;              // 入力フィールドとテキストエリアの幅
+      padding: 0.75rem;
+      margin: 0.5rem 0;         // 上下の外側の余白
+      border: 1px solid #ccc; // 薄いグレーの境界線を設定
+      border-radius: 6px;       // 角を6pxの半径で丸める
+      font-size: 1rem;
+      resize: vertical;         // 縦方向のサイズ変更を許可
+    }
+
+    button {
+      padding: 0.75rem 1.5rem;
+      border: none;                // ボタンの境界線をなしにする
+      background-color: #4a5568;
+      color: white;              // 文字色
+      font-size: 1rem;
+      border-radius: 6px;          // ボタンの角を6pxの半径で丸める
+      cursor: pointer;             // カーソルをポインターに変える
+
+      &:hover {
+        background-color: #2d3748; // ホバー時の背景色
+      }
+    }
+
+    .status {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  }
+}

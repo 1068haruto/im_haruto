@@ -13,9 +13,11 @@ const apps = [
       バックエンド: ["Ruby", "Ruby on Rails"],
       フロントエンド: ["HTML", "SCSS", "JavaScript", "Bootstrap"],
       データベース: ["PostgreSQL"],
-      インフラ: ["Heroku", "Docker"],
-      バージョン管理: ["Git", "（GitHub Actions）"],
-      外部API: ["GNews API", "OpenAI API"]
+      インフラ: ["Heroku"],
+      開発環境: ["Docker"],
+      バージョン管理: ["Git"],
+      CI_CD: ["GitHub Actions"],
+      外部API: ["GNews API", "OpenAI API"],
     },
     github: "https://github.com/1068haruto/scenapla",
     site: "https://scenapla.com/",
@@ -27,8 +29,10 @@ const apps = [
     image: "/portfolio_imharuto.png",
     description: "今、ご確認いただいている、私の自己紹介ページです。",
     tech: {
-      フロントエンド: ["TypeScript", "React", "Next.js", "Tailwind CSS", "SCSS"],
-      インフラ: ["Vercel", "Docker"],
+      フロントエンド: ["TypeScript", "React", "Next.js", "SCSS", "Tailwind CSS"],
+      バックエンド: ["Next.js（API Routes）"],
+      インフラ: ["Vercel"],
+      開発環境: ["Docker"],
       バージョン管理: ["Git"],
     },
     github: "https://github.com/1068haruto/im_haruto",
@@ -51,7 +55,7 @@ const Portfolio: React.FC = () => {
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setVisible(false);
-    }, 150);
+    }, 10000);
   };
 
   const handleDetailEnter = () => {
@@ -62,27 +66,19 @@ const Portfolio: React.FC = () => {
   const handleDetailLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setVisible(false);
-    }, 150);
+    }, 10000);
   };
 
   const hoveredApp = apps.find((app) => app.id === hoveredAppId);
 
   return (
-    <section id="portfolio" className="min-h-screen section-anchor-offset portfolio-section">
-      <h2 className="text-3xl font-bold mb-8">ポートフォリオ</h2>
+    <section id="portfolio" className="section-anchor-offset portfolio">
+      <h2 className="portfolio-heading">ポートフォリオ</h2>
 
       <div className="app-container">
         {apps.map((app) => (
-          <div
-            key={app.id}
-            className="app-card"
-            onMouseEnter={() => handleMouseEnter(app.id)}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div className="image-wrapper">
-              <Image src={app.image} alt={app.name} width={400} height={300} className="app-image" />
-            </div>
-            <p className="app-title">{app.name}</p>
+          <div key={app.id} className="app-card" onMouseEnter={() => handleMouseEnter(app.id)} onMouseLeave={handleMouseLeave}>
+            <Image src={app.image} alt={app.name} width={400} height={300} className="app-image" />
           </div>
         ))}
       </div>
@@ -93,10 +89,9 @@ const Portfolio: React.FC = () => {
         onMouseLeave={handleDetailLeave}
       >
         {hoveredApp && (
-          <div className="app-detail-inner">
-            <h3 className="detail-title">{hoveredApp.name}</h3>
-            <p className="detail-description">{hoveredApp.description}</p>
-
+          <div className="app-detail">
+            <h3 className="app-detail-title">{hoveredApp.name}</h3>
+            <p className="app-detail-description">{hoveredApp.description}</p>
             <div className="link-icons">
               {hoveredApp.site && (
                 <a href={hoveredApp.site} target="_blank" rel="noopener noreferrer" className="link-icon">

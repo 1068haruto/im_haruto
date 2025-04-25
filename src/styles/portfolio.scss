@@ -1,127 +1,143 @@
-.portfolio-section {
+.portfolio {
   position: relative;
-}
-
-.app-container {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
-
-  .app-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .app-card:hover .app-image {
-    transform: scale(1.13);
-  }
-
-  .app-image {
-    width: 300px;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
-  }
-
-  .app-title {
-    margin-top: 0.75rem;
-    font-size: 1.125rem;
-    font-weight: 600;
-  }
-}
-
-.app-detail-wrapper {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, opacity 0.4s ease;
-  pointer-events: none; // 非表示時のクリック無効
-}
-
-.app-detail-wrapper.show {
-  max-height: 500px;
-  opacity: 1;
-  pointer-events: auto;
-  margin-top: 2rem;
-}
-
-.app-detail-wrapper.hide {
-  max-height: 0;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.app-detail-inner {
-  background: #f9f9f9;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: left;
-
-  .detail-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 0.75rem;
-  }
-
-  .detail-description,
-  .detail-tech {
-    margin-bottom: 0.75rem;
-    font-size: 1rem;
-  }
-
-  .link-icons {
-    margin-top: 1rem;
-    display: flex;
-    gap: 1.25rem;
+  padding: 4rem 2rem;
+  z-index: 1;
+  min-height: 100vh;
+  color: #fff;
   
-    .link-icon {
+  &::before {
+    content: "";                  /* 擬似要素を空に設定 */
+    position: absolute;           /* 絶対位置で配置 */
+    top: 0;                       /* 上端からの位置 */
+    left: 0;                      /* 左端からの位置 */
+    width: 100%;                  /* 幅(親基準) */
+    height: 100%;                 /* 高さ(親基準) */
+    background-image: url('/bg-images/portfolio.jpg');
+    background-size: cover;       /* 背景画像をカバーする */
+    background-position: center;  /* 画像の中心に配置 */
+    background-repeat: no-repeat; /* 背景画像を繰り返さない */
+    filter: brightness(0.6);
+    z-index: -1;
+  }
+
+  &-heading {
+		font-size: 2rem;
+		margin-bottom: 2rem;
+		font-weight: bold;
+	}
+
+  .app-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+  
+    .app-card {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      font-size: 1rem;
-      text-decoration: none;
-      color: #1d4ed8; // Tailwindのblue-700相当
-      font-weight: 600;
-  
-      svg {
-        font-size: 1.2rem;
+      text-align: center;
+
+      .app-image {
+        width: 300px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.628);
+        transition: transform 0.8s ease;
       }
-  
-      &:hover {
-        text-decoration: underline;
+    }
+
+    .app-card:hover .app-image {
+      transform: scale(1.13);
+    }
+  }
+
+  .app-detail-wrapper {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 1.5s ease, opacity 1.5s ease;
+    pointer-events: none; // 非表示時のクリック無効
+
+    .app-detail {
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.021);
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    
+      &-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 0.75rem;
+      }
+    
+      &-description {
+        margin-bottom: 0.75rem;
+        font-size: 1rem;
+      }
+    
+      .link-icons {
+        margin-top: 1rem;
+        display: flex;
+        gap: 1.25rem;
+      
+        .link-icon {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 1rem;
+          text-decoration: none;
+          color: white; // Tailwindのblue-700相当
+          font-weight: 600;
+          margin-bottom: 1rem;
+
+          // カードのスタイル設定
+          background-color: rgba(154, 154, 154, 0.279); // 背景（透ける）
+          border-radius: 10px;
+          padding: 0rem 1rem;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.416);  // 影
+      
+          svg {
+            font-size: 1.2rem;
+          }
+      
+          &:hover {
+            transform: scale(0.95);
+            color: rgb(80, 133, 246);
+          }
+        }
+      }
+    
+      .tech-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+      
+        th, td {
+          padding: 0.2rem 0.75rem;
+          border: 1px solid #ccc;
+          text-align: left;
+        }
+      
+        th {
+          font-weight: 600;
+        }
       }
     }
   }
 
-  .tech-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-  
-    th, td {
-      padding: 0.5rem 0.75rem;
-      border: 1px solid #ccc;
-      text-align: left;
-    }
-  
-    th {
-      background-color: #eee;
-      font-weight: 600;
-    }
-  
-    td {
-      background-color: #fff;
-    }
+  .app-detail-wrapper.show {
+    max-height: 500px;
+    opacity: 1;
+    pointer-events: auto;
+    margin-top: 2rem;
   }
   
+  .app-detail-wrapper.hide {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
 }
+

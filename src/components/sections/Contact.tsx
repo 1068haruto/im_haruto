@@ -35,8 +35,8 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen section-anchor-offset contact-section">
-      <h2 className="text-3xl font-bold">お問い合わせ</h2>
+    <section id="contact" className="section-anchor-offset contact">
+      <h2 className="contact-heading">お問い合わせ</h2>
       <p>お問い合わせは、下記フォームよりお願いいたします。</p>
       <form onSubmit={handleSubmit}>
         <input name="name" type="text" placeholder="お名前" value={formData.name} onChange={handleChange} required />

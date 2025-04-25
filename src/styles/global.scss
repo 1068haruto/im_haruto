@@ -10,7 +10,6 @@ body {
 
   .section-anchor-offset {
     padding-top: 64px;
-    margin-top: -64px;
   }
 
 	header {
@@ -18,8 +17,9 @@ body {
 		top: 0;
 		width: 100%;
 		z-index: 50;
-		background-color: #4a5568; /* bg-gray-600相当 */
+		background-color: rgba(74, 85, 104, 0.8); /* 元の色に透明度 0.8 を追加 */
 		text-align: center;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* 薄い影を追加 */
 
 		nav {
 			display: flex;
@@ -29,6 +29,7 @@ body {
 		}
 
 		a {
+			color: white; /* リンクテキストを白色に */
 			transition: opacity 0.2s ease-in-out;
 		
 			&:hover {
@@ -39,7 +40,6 @@ body {
 
 	main {
 		min-height: 100vh;
-		padding-top: 5rem; /* pt-20相当 */
 		gap: 2rem;         /* space-y-32相当 */
 	}
 

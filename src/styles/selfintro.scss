@@ -1,61 +1,61 @@
 .selfintro {
-	padding: 4rem 2rem;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column; /* 縦に並べる */
+  align-items: center;    /* 中央に配置(横) */
+  position: relative;     /* 子要素のabsolute配置の基準 */
+  z-index: 1;
+  min-height: 100vh;
+  color: #fff;
+
+  &::before {
+    content: "";                  /* 擬似要素を空に設定 */
+    position: absolute;           /* 絶対位置で配置 */
+    top: 0;                       /* 上端からの位置 */
+    left: 0;                      /* 左端からの位置 */
+    width: 100%;                  /* 幅(親基準) */
+    height: 100%;                 /* 高さ(親基準) */
+    background-image: url('/bg-images/selfintro.jpg');
+    background-size: cover;       /* 背景画像をカバーする */
+    background-position: center;  /* 画像の中心に配置 */
+    background-repeat: no-repeat; /* 背景画像を繰り返さない */
+    filter: brightness(0.6);
+    z-index: -1;
+  }
 
 	&-heading {
 		font-size: 2rem;
 		margin-bottom: 2rem;
 		font-weight: bold;
-		text-align: center; // 中央揃え
 	}
 
-	&-content {
-    display: flex;           // フレックスボックスで配置
-    flex-direction: row;     // フレックスアイテムを横並びにする
-    align-items: flex-start; // アイテムを上揃えにする
-    justify-content: center; // コンテンツを中央に配置
-    max-width: 1000px;       // セクションの最大幅
-    margin: 0 auto;          // セクションを左右中央に配置
-    gap: 3rem;               // 写真とテキストの間の余白
-
-    @media (max-width: 768px) { // 画面幅が768px以下の場合
-      flex-direction: column;   // フレックスアイテムを縦並びにする
-      align-items: center;      // アイテムを中央揃えにする
-      text-align: left;         // テキストを左揃えにする
-    }
-  }
-
-	&-image-wrapper {
-    flex: 0 0 auto;            // サイズを固定
-    display: flex;             // フレックスボックスで配置
-    justify-content: flex-end; // 画像を右端に配置
-
-    .selfintro-image {
-      border-radius: 1rem;     // 画像の角を1rem丸める
-      object-fit: cover;       // 画像のアスペクト比を保ちながら、要素を埋める
-    }
-  }
-
 	&-text {
-    flex: 1;          // 残りのスペースを占有
+    position: absolute;               // 絶対位置で配置
+    top: 55%;                         // 上からの位置
+    left: 72%;                        // 左からの位置
+    transform: translate(-50%, -50%); // 自身の幅と高さの半分だけ中央に移動
     font-size: 1rem;
-    line-height: 1.6; // 行の高さを1.6倍に設定
-    text-align: left; // テキストを左揃えにする
+    line-height: 2;                   // 行の高さ
+    text-align: left;                 // 左揃え
+
+    // カードのスタイル設定
+    background-color: rgba(154, 154, 154, 0.287); // 背景（透ける）
+    border-radius: 10px;                            // 角
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.416);  // 影
+    width: 47%;
 
     .selfintro-item {
       margin-bottom: 1.5rem;
 
       h3 {
         font-weight: bold;
-        margin-bottom: 0.5rem;
+        
         font-size: 1.2rem;
       }
 
       ul {
         padding-left: 1rem;
-
-        li {
-          margin-bottom: 1rem;
-        }
       }
     }
   }

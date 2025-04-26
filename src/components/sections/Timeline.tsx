@@ -28,7 +28,7 @@ const timelineData = [
 const Timeline: React.FC = () => {
   return (
     <section id="timeline" className="section-anchor-offset timeline">
-      <h2 className="text-3xl font-bold">経歴</h2>
+      <h2 className="timeline-heading">経歴</h2>
       <div className="timeline-container">
         {timelineData.map((item, index) => (
           <div className="timeline-item" key={index}>

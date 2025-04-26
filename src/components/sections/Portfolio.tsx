@@ -55,7 +55,7 @@ const Portfolio: React.FC = () => {
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setVisible(false);
-    }, 10000);
+    }, 7000);
   };
 
   const handleDetailEnter = () => {
@@ -66,7 +66,7 @@ const Portfolio: React.FC = () => {
   const handleDetailLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setVisible(false);
-    }, 10000);
+    }, 7000);
   };
 
   const hoveredApp = apps.find((app) => app.id === hoveredAppId);
@@ -77,7 +77,7 @@ const Portfolio: React.FC = () => {
 
       <div className="app-container">
         {apps.map((app) => (
-          <div key={app.id} className="app-card" onMouseEnter={() => handleMouseEnter(app.id)} onMouseLeave={handleMouseLeave}>
+          <div key={app.id} onMouseEnter={() => handleMouseEnter(app.id)} onMouseLeave={handleMouseLeave}>
             <Image src={app.image} alt={app.name} width={400} height={300} className="app-image" />
           </div>
         ))}

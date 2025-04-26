@@ -1,6 +1,6 @@
 .timeline {
   padding: 4rem 2rem;
-  position: relative;     /* 子要素のabsolute配置の基準 */
+  position: relative;
   z-index: 1;
   min-height: 100vh;
   color: #fff;
@@ -20,18 +20,24 @@
     z-index: -1;
   }
 
+  &-heading {
+		font-size: 2rem;
+		margin-bottom: 2rem;
+		font-weight: bold;
+	}
+
   // 各タイムライン項目
   &-container {
-    position: relative; // 子要素を絶対位置で配置するための基準位置
+    position: relative;
 
-    // ライン（擬似要素）
+    // ライン
     &::before {
-      content: '';                 // ラインを空にし、表示しない
-      position: absolute;          // 親要素に対して絶対位置で配置
-      top: 0;                      // 親要素の上端に配置
-      bottom: 0;                   // ラインを親要素の下端まで伸ばす
-      left: 50%;                   // ラインを親要素の中央に配置するため、左端を50%にする
-      width: 2px;                  // ラインの幅
+      content: '';                 // 擬似要素を空にする
+      position: absolute;          // 絶対位置で配置
+      top: 0;                      // 親の上端に配置
+      bottom: 0;                   // 親の下端まで伸ばす
+      left: 50%;                   // 左からの位置（親の中央に配置するため）
+      width: 2px;
       background-color: #ccc;
       transform: translateX(-50%); // 擬似要素を自身の幅の半分だけ左に移動させ、中央に配置
     }
@@ -73,7 +79,7 @@
     padding: 1rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.416);  // 影
     width: 48%;
-    
+
     h3 {
       margin-bottom: 1rem;
 

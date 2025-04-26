@@ -17,21 +17,21 @@ body {
 		top: 0;
 		width: 100%;
 		z-index: 50;
-		background-color: rgba(74, 85, 104, 0.8); /* 元の色に透明度 0.8 を追加 */
+		background-color: rgba(74, 85, 104, 0.8);
 		text-align: center;
-		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* 薄い影を追加 */
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* 影 */
 
 		nav {
 			display: flex;
 			justify-content: center;
-			gap: 2rem;     /* space-x-8相当 */
-			padding: 1rem; /* p-4相当 */
+			gap: 2rem;
+			padding: 1rem;
 		}
 
 		a {
-			color: white; /* リンクテキストを白色に */
+			color: white;
 			transition: opacity 0.2s ease-in-out;
-		
+
 			&:hover {
 				opacity: 0.8;
 			}
@@ -40,15 +40,15 @@ body {
 
 	main {
 		min-height: 100vh;
-		gap: 2rem;         /* space-y-32相当 */
+		gap: 2rem;
 	}
 
 	footer {
-		background-color: #edf2f7; /* bg-gray-200相当 */
+		background-color: #edf2f7;
 		text-align: center;
-		padding: 0.5rem;     /* p-2相当 */
-		font-size: 0.875rem; /* text-sm相当 */
-		color: #718096;    /* text-gray-600相当 */
+		padding: 0.5rem;
+		font-size: 0.875rem;
+		color: #718096;
 	}
 }
 

@@ -12,32 +12,6 @@ body {
     padding-top: 64px;
   }
 
-	header {
-		position: fixed;
-		top: 0;
-		width: 100%;
-		z-index: 50;
-		background-color: rgba(74, 85, 104, 0.8);
-		text-align: center;
-		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* 影 */
-
-		nav {
-			display: flex;
-			justify-content: center;
-			gap: 2rem;
-			padding: 1rem;
-		}
-
-		a {
-			color: white;
-			transition: opacity 0.2s ease-in-out;
-
-			&:hover {
-				opacity: 0.8;
-			}
-		}
-	}
-
 	main {
 		min-height: 100vh;
 		gap: 2rem;

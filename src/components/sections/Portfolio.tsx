@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
 import Image from "next/image";
+import SectionHeading from "@/components/SectionHeading";
 import "@/styles/portfolio.scss";
 
 const apps = [
@@ -73,8 +74,7 @@ const Portfolio: React.FC = () => {
 
   return (
     <section id="portfolio" className="section-anchor-offset portfolio">
-      <h2 className="portfolio-heading">ポートフォリオ</h2>
-
+      <SectionHeading className="portfolio-heading">ポートフォリオ</SectionHeading>
       <div className="app-container">
         {apps.map((app) => (
           <div key={app.id} onMouseEnter={() => handleMouseEnter(app.id)} onMouseLeave={handleMouseLeave}>

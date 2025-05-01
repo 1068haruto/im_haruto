@@ -1,4 +1,5 @@
 import React from "react";
+import SectionHeading from "@/components/SectionHeading";
 import "@/styles/timeline.scss";
 
 const timelineData = [
@@ -28,7 +29,7 @@ const timelineData = [
 const Timeline: React.FC = () => {
   return (
     <section id="timeline" className="section-anchor-offset timeline">
-      <h2 className="timeline-heading">経歴</h2>
+      <SectionHeading className="timeline-heading">経歴</SectionHeading>
       <div className="timeline-container">
         {timelineData.map((item, index) => (
           <div className="timeline-item" key={index}>

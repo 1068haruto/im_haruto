@@ -1,0 +1,40 @@
+.top {
+  display: flex;
+  flex-direction: column;                         /* 縦に並べる */
+  justify-content: center;                        /* 縦の中央 */
+  align-items: center;                            /* 横の中央 */
+  text-align: center;
+  position: relative;                             /* 子要素の配置基準 */
+  z-index: 1;
+  min-height: 100vh;                              /* 背景を画面全体に表示 */
+  color: #fff;
+
+  &::before {
+    content: "";                                  /* 擬似要素を空に */  
+    position: absolute;                           /* 絶対位置で配置 */
+    top: 0;                                       /* 上端からの位置 */
+    left: 0;                                      /* 左端からの位置 */
+    width: 100%;                                  /* 親基準 */
+    height: 100%;                                 /* 親基準 */
+    background-image: url('/bg-images/top.jpg');
+    background-size: cover;                       /* 背景画像をカバーするよう調整 */
+    background-position: center;                  /* 画像の中心に配置 */
+    background-repeat: no-repeat;                 /* 背景画像を繰り返さない */
+    filter: brightness(0.8);                      /* 明るさ */
+    z-index: -1;
+    animation: zoomInSlow 5s ease-out forwards;
+  }
+}
+
+.title {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 5rem;
+}
+
+.paragraph {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-bottom: 2.5rem;
+}

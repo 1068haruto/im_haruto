@@ -1,10 +1,11 @@
 import React from "react";
+import SectionHeading from "@/components/SectionHeading";
 import "@/styles/selfintro.scss";
 
 const SelfIntro: React.FC = () => {
   return (
     <section id="selfintro" className="section-anchor-offset selfintro">
-      <h2 className="selfintro-heading">自己紹介</h2>
+      <SectionHeading className="selfintro-heading">自己紹介</SectionHeading>
       <div className="selfintro-text">
         <div className="selfintro-item">
           <h3>名前</h3>

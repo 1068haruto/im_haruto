@@ -6,52 +6,50 @@
   color: #fff;
 
   &::before {
-    content: "";                  /* 擬似要素を空に設定 */
-    position: absolute;           /* 絶対位置で配置 */
-    top: 0;                       /* 上端からの位置 */
-    left: 0;                      /* 左端からの位置 */
-    width: 100%;                  /* 幅(親基準) */
-    height: 100%;                 /* 高さ(親基準) */
+    content: "";                                      // 擬似要素を空に設定
+    position: absolute;                               // 絶対位置
+    top: 0;                                           // 上端からの位置
+    left: 0;                                          // 左端からの位置
+    width: 100%;                                      // 幅(親基準)
+    height: 100%;                                     // 高さ(親基準)
     background-image: url('/bg-images/timeline.jpg');
-    background-size: cover;       /* 背景画像をカバーする */
-    background-position: center;  /* 画像の中心に配置 */
-    background-repeat: no-repeat; /* 背景画像を繰り返さない */
+    background-size: cover;                           // 背景画像をカバーする
+    background-position: center;                      // 画像の中心に配置
+    background-repeat: no-repeat;                     // 背景画像を繰り返さない
     filter: brightness(0.6);
     z-index: -1;
   }
 
   &-heading {
-		font-size: 2rem;
-		margin-bottom: 2rem;
-		font-weight: bold;
-	}
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+  }
 
   // 各タイムライン項目
   &-container {
     position: relative;
-
-    // ライン
-    &::before {
-      content: '';                 // 擬似要素を空にする
-      position: absolute;          // 絶対位置で配置
-      top: 0;                      // 親の上端に配置
-      bottom: 0;                   // 親の下端まで伸ばす
-      left: 50%;                   // 左からの位置（親の中央に配置するため）
-      width: 2px;
-      background-color: #ccc;
-      transform: translateX(-50%); // 擬似要素を自身の幅の半分だけ左に移動させ、中央に配置
-    }
   }
 
-  // 各タイムライン項目
-  .timeline-item {
+  &-line {
+    position: absolute;          // 絶対位置
+    top: 0;                      // 上端に配置（親基準）
+    bottom: 0;                   // 親の下端まで伸ばす
+    left: 50%;                   // 左からの位置（親の中央に配置するため）
+    width: 2px;
+    background-color: #ccc;
+    transform: translateX(-50%); // 自身の幅の半分だけ左に移動させ、中央に配置
+    z-index: 0;
+  }
+
+  &-item {
     display: flex;                  // 子要素を横並びにする
     justify-content: space-between; // 子要素の間にスペースを均等に配置
     align-items: center;            // 子要素を縦の中央に揃える
     position: relative;             // 子要素を絶対位置で配置するための基準位置
     margin: 1.5rem;
 
-    // 丸いアイコン（擬似要素）
+    // 丸いアイコン
     &::before {
       content: '';                      // 内容を空にし、表示しない
       position: absolute;               // 親要素に対して絶対位置で配置する
@@ -65,26 +63,24 @@
       z-index: 2;                       // 他の要素の上に表示する
       border: 1px solid white;        // 白い枠線を追加
     }
-
+  
     &:nth-child(odd) {
       flex-direction: row-reverse;
     }
   }
 
-  // タイムライン項目の内容部分
   &-content {
-    padding: 15px;
-    background-color: rgba(154, 154, 154, 0.287); // 背景（透ける）
-    border-radius: 10px;                            // 角
     padding: 1rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.416);  // 影
+    background-color: rgba(154, 154, 154, 0.287);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.416);
     width: 48%;
-
+  
     h3 {
       margin-bottom: 1rem;
-
-      .status-text {
-        font-size: 1.1rem; // statusは少し小さく
+  
+      .statusText {
+        font-size: 1.15rem;
       }
     }
   }

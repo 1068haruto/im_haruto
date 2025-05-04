@@ -2,15 +2,15 @@
   padding: 4rem 2rem;
   display: flex;
   flex-direction: column; /* 縦に並べる */
-  align-items: center;    /* 中央に配置(横) */
-  position: relative;     /* 子要素のabsolute配置の基準 */
+  align-items: center;    /* 中央配置(横) */
+  position: relative;     /* 子要素の配置基準 */
   z-index: 1;
   min-height: 100vh;
   color: #fff;
 
   &::before {
-    content: "";                  /* 擬似要素を空に設定 */
-    position: absolute;           /* 絶対位置で配置 */
+    content: "";                  /* 擬似要素を空に */
+    position: absolute;           /* 絶対位置 */
     top: 0;                       /* 上端からの位置 */
     left: 0;                      /* 左端からの位置 */
     width: 100%;                  /* 幅(親基準) */
@@ -30,17 +30,17 @@
 	}
 
 	&-text {
-    position: absolute;               // 絶対位置で配置
-    top: 55%;                         // 上からの位置
-    left: 72%;                        // 左からの位置
+    position: absolute;               // 絶対位置
+    top: 55%;                         // 上端からの位置
+    left: 72%;                        // 左端からの位置
     transform: translate(-50%, -50%); // 自身の幅と高さの半分だけ中央に移動
     font-size: 1rem;
-    line-height: 2;                   // 行の高さ
+    line-height: 2;                   // 行高
     text-align: left;                 // 左揃え
 
     // カードのスタイル設定
     background-color: rgba(154, 154, 154, 0.287); // 背景（透ける）
-    border-radius: 10px;                            // 角
+    border-radius: 10px;
     padding: 2rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.416);  // 影
     width: 47%;

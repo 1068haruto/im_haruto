@@ -1,21 +1,21 @@
 import React from "react";
 import SectionHeading from "@/components/SectionHeading";
-import "@/styles/selfintro.scss";
+import styles from "@/styles/selfintro.module.scss";
 
 const SelfIntro: React.FC = () => {
   return (
-    <section id="selfintro" className="section-anchor-offset selfintro">
-      <SectionHeading className="selfintro-heading">自己紹介</SectionHeading>
-      <div className="selfintro-text">
-        <div className="selfintro-item">
+    <section id="selfintro" className={`section-anchor-offset ${styles.selfintro}`}>
+      <SectionHeading className={styles["selfintro-heading"]}>自己紹介</SectionHeading>
+      <div className={styles["selfintro-text"]}>
+        <div className={styles["selfintro-item"]}>
           <h3>名前</h3>
           <p>春日 晴都（かすが はると・28歳）</p>
         </div>
-        <div className="selfintro-item">
+        <div className={styles["selfintro-item"]}>
           <h3>移住地</h3>
           <p>島根（地元）▶︎大阪（大学）▶︎千葉（社会人）▶︎愛知（社会人）▶︎島根（現在）</p>
         </div>
-        <div className="selfintro-item">
+        <div className={styles["selfintro-item"]}>
           <h3>趣味</h3>
           <ul>
             <li>

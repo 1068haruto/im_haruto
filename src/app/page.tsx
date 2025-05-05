@@ -1,6 +1,3 @@
-// import Image from "next/image";
-// Imageコンポーネントを使って画像を表示するまでコメントアウトとする
-
 import React from "react";
 import Top from "@/components/sections/Top";
 import SelfIntro from "@/components/sections/SelfIntro";
@@ -10,7 +7,7 @@ import Contact from "@/components/sections/Contact";
 
 const Home: React.FC = () => {
   return (
-    <main className="text-gray-600 text-center">
+    <main>
       <Top />
       <SelfIntro />
       <Timeline />

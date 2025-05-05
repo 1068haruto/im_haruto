@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from "react";
 import SectionHeading from "@/components/SectionHeading";
-import "@/styles/contact.scss";
+import styles from "@/styles/sections/contact.module.scss";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '', company: '' });  // 入力内容管理のための状態を作成
@@ -30,8 +30,8 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="section-anchor-offset contact">
-      <SectionHeading className="contact-heading">お問い合わせ</SectionHeading>
+    <section id="contact" className={`section-anchor-offset ${styles.contact}`}>
+      <SectionHeading className={styles['contact-heading']}>お問い合わせ</SectionHeading>
       <p>お問い合わせは、下記フォームよりお願いいたします。</p>
       <form onSubmit={handleSubmit}>
         <input name="name" type="text" placeholder="お名前" value={formData.name} onChange={handleChange} required />
@@ -39,7 +39,7 @@ const Contact: React.FC = () => {
         <input name="email" type="email" placeholder="メールアドレス（ご希望の返信先）" value={formData.email} onChange={handleChange} required />
         <textarea name="message" placeholder="お問い合わせ内容" value={formData.message} onChange={handleChange} required />
         <button type="submit">送信</button>
-        <p className="status">{status}</p>
+        <p className={styles.status}>{status}</p>
       </form>
     </section>
   );

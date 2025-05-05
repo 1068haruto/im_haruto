@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import styles from "@/styles/top.module.scss";
+import styles from "@/styles/sections/top.module.scss";
 
 const Top: React.FC = () => {
   return (

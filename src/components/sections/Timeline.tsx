@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import SectionHeading from "@/components/SectionHeading";
-import styles from "@/styles/timeline.module.scss";
+import styles from "@/styles/sections/timeline.module.scss";
 
 const timelineData = [
   {

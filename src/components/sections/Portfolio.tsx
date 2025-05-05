@@ -2,7 +2,7 @@
 import React, { useState, useRef } from "react";
 import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
-import "@/styles/portfolio.scss";
+import styles from "@/styles/sections/portfolio.module.scss";
 
 const apps = [
   {
@@ -73,41 +73,41 @@ const Portfolio: React.FC = () => {
   const hoveredApp = apps.find((app) => app.id === hoveredAppId);
 
   return (
-    <section id="portfolio" className="section-anchor-offset portfolio">
-      <SectionHeading className="portfolio-heading">ポートフォリオ</SectionHeading>
-      <div className="app-container">
+    <section id="portfolio" className={`section-anchor-offset ${styles.portfolio}`}>
+      <SectionHeading className={styles['portfolio-heading']}>ポートフォリオ</SectionHeading>
+      <div className={styles['app-container']}>
         {apps.map((app) => (
           <div key={app.id} onMouseEnter={() => handleMouseEnter(app.id)} onMouseLeave={handleMouseLeave}>
-            <Image src={app.image} alt={app.name} width={400} height={300} className="app-image" />
+            <Image src={app.image} alt={app.name} width={400} height={300} className={styles['app-image']} />
           </div>
         ))}
       </div>
 
       <div
-        className={`app-detail-wrapper ${visible ? "show" : "hide"}`}
+        className={`${styles['app-detail-wrapper']} ${visible ? styles.show : styles.hide}`}
         onMouseEnter={handleDetailEnter}
         onMouseLeave={handleDetailLeave}
       >
         {hoveredApp && (
-          <div className="app-detail">
-            <h3 className="app-detail-title">{hoveredApp.name}</h3>
-            <p className="app-detail-description">{hoveredApp.description}</p>
-            <div className="link-icons">
+          <div className={styles['app-detail']}>
+            <h3 className={styles['app-detail-title']}>{hoveredApp.name}</h3>
+            <p className={styles['app-detail-description']}>{hoveredApp.description}</p>
+            <div className={styles['link-icons']}>
               {hoveredApp.site && (
-                <a href={hoveredApp.site} target="_blank" rel="noopener noreferrer" className="link-icon">
+                <a href={hoveredApp.site} target="_blank" rel="noopener noreferrer" className={styles['link-icon']}>
                   <img src={hoveredApp.icon} alt="App Link" width={20} height={20} />
                   <span>アプリを見る</span>
                 </a>
               )}
               {hoveredApp.github && (
-                <a href={hoveredApp.github} target="_blank" rel="noopener noreferrer" className="link-icon">
+                <a href={hoveredApp.github} target="_blank" rel="noopener noreferrer" className={styles['link-icon']}>
                   <img src="/icons/github.svg" alt="GitHub Link" width={20} height={20} />
                   <span>GitHub</span>
                 </a>
               )}
             </div>
 
-            <table className="tech-table">
+            <table className={styles['tech-table']}>
               <thead>
                 <tr>
                   <th>カテゴリ</th>

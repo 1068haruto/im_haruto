@@ -2,7 +2,7 @@
 import React, { useState, useRef } from "react";
 import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
-import styles from "@/styles/portfolio.module.scss";
+import styles from "@/styles/sections/portfolio.module.scss";
 
 const apps = [
   {

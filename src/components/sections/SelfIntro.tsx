@@ -1,6 +1,6 @@
 import React from "react";
 import SectionHeading from "@/components/SectionHeading";
-import styles from "@/styles/selfintro.module.scss";
+import styles from "@/styles/sections/selfintro.module.scss";
 
 const SelfIntro: React.FC = () => {
   return (

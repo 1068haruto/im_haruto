@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from "react";
 import SectionHeading from "@/components/SectionHeading";
-import styles from "@/styles/contact.module.scss";
+import styles from "@/styles/sections/contact.module.scss";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '', company: '' });  // 入力内容管理のための状態を作成

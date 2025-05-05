@@ -1,35 +1,28 @@
-// このファイルは、お問い合わせフォームから送信されたデータを受け取り、実際にメールを送信する処理を担当する
+// お問い合わせフォームのデータを受け取り、実際にメールを送信する処理を担当する
 
+import type { NextApiRequest, NextApiResponse } from 'next';                        // Next.jsのAPI Routesを扱うのに必要な型を読み込み
+import nodemailer from 'nodemailer';                                                // メールを送信するためのライブラリ読み込み
 
-import type { NextApiRequest, NextApiResponse } from 'next';  // Next.jsのAPI Routesを扱うのに必要な型を読み込み
-import nodemailer from 'nodemailer';                          // メールを送信するためのライブラリ読み込み
-
-// Next.jsのAPI Routeのエントリーポイントとなる非同期関数
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  // APIエンドポイントがPOSTリクエストのみを受け付ける
-  if (req.method !== 'POST') {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {  // Next.jsのAPI Routeのエントリーポイントとなる非同期関数
+  if (req.method !== 'POST') {                                                      // APIエンドポイントがPOSTリクエストのみを受け付ける
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  // リクエストの本文（body）に含まれるデータを取得
-  const { name, company, email, message } = req.body;
+  const { name, company, email, message } = req.body;                               // リクエストの本文（body）に含まれるデータを取得
 
-  // 必須のデータが空出ないか確認
-  if (!name || !company || !email || !message) {
+  if (!name || !company || !email || !message) {                                    // 必須のデータが空出ないか確認
     return res.status(400).json({ message: 'Missing required fields' });
   }
 
-  // nodemailerを使い、メール送信をするための設定
-  const transporter = nodemailer.createTransport({
+  const transporter = nodemailer.createTransport({                                  // nodemailerを使い、メール送信をするための設定
     service: 'gmail',
     auth: {
       user: process.env.MAIL_USER,
-      pass: process.env.MAIL_PASS, // アプリパスワード
+      pass: process.env.MAIL_PASS,                                                  // アプリパスワード
     },
   });
 
-  //メール送信処理のエラハン（tryブロックを実行し、エラー発生したらcatchブロックを実行）
-  try {
+  try {                                                                             //メール送信処理のエラハン（tryブロックを実行し、エラー発生したらcatchブロックを実行）
     await transporter.sendMail({
       from: email,
       to: process.env.MAIL_USER,

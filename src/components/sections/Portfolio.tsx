@@ -18,7 +18,7 @@ const apps = [
       開発環境: ["Docker"],
       バージョン管理: ["Git"],
       CI_CD: ["GitHub Actions"],
-      外部API: ["GNews API", "OpenAI API"],
+      外部API: ["Mailgun API", "OpenAI API", "GNews API"],
     },
     github: "https://github.com/1068haruto/scenapla",
     site: "https://scenapla.com/",

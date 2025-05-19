@@ -1,24 +1,24 @@
 .selfintro {
   padding: 4rem 2rem;
   display: flex;
-  flex-direction: column; /* 縦に並べる */
-  align-items: center;    /* 中央配置(横) */
-  position: relative;     /* 子要素の配置基準 */
+  flex-direction: column;
+  align-items: center;                                  // 中央配置(横)
+  position: relative;
   z-index: 1;
   min-height: 100vh;
   color: #fff;
 
   &::before {
-    content: "";                  /* 擬似要素を空に */
-    position: absolute;           /* 絶対位置 */
-    top: 0;                       /* 上端からの位置 */
-    left: 0;                      /* 左端からの位置 */
-    width: 100%;                  /* 幅(親基準) */
-    height: 100%;                 /* 高さ(親基準) */
+    content: "";                                        // 内容を空に
+    position: absolute;                                 // 絶対位置
+    top: 0;                                             // 上端からの位置
+    left: 0;                                            // 左端からの位置
+    width: 100%;                                        // 幅(親基準)
+    height: 100%;                                       // 高さ(親基準)
     background-image: url('/bg-images/selfintro.jpg');
-    background-size: cover;       /* 背景画像をカバーする */
-    background-position: center;  /* 画像の中心に配置 */
-    background-repeat: no-repeat; /* 背景画像を繰り返さない */
+    background-size: cover;                             // 背景画像をカバーする
+    background-position: center;                        // 画像の中心に配置 
+    background-repeat: no-repeat;                       // 背景画像を繰り返さない
     filter: brightness(0.3);
     z-index: -1;
   }
@@ -32,43 +32,43 @@
 
   &-container {
     display: flex;
-    flex-direction: column; // アイコンとテキストを縦に
-    align-items: center;    // アイコンとテキストを中央配置(横)
-    margin-bottom: 2rem;    // アイコンとテキストの間の余白
+    flex-direction: column;
+    align-items: center;                                 // 中央配置(横)
+    margin-bottom: 2rem;                                 // アイコンとテキストの間の余白
   }
 
   // アイコン
   &-icon-wrapper {
-    width: 200px;          // 幅
-    height: 200px;         // 高さ
-    border-radius: 50%;    // 円形に
-    overflow: hidden;      // 画像が枠からはみ出ないように
-    margin-bottom: 1rem;   // アイコンと名前の間の余白
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;                                  // 円形に
+    overflow: hidden;                                    // 画像が枠からはみ出ないように
+    margin-bottom: 1rem;                                 // アイコンと名前の間の余白
   }
 
   &-icon {
     width: 100%;
     height: 100%;
-    object-fit: cover;     // 要素に合わせて画像をトリミング
+    object-fit: cover;                                   // 要素に合わせて画像をトリミング
   }
 
   &-name {
     font-size: 1.2rem;
-    margin-bottom: 1rem;   // 名前とテキストの間の余白
-    text-align: center;    // 中央揃え
+    margin-bottom: 1rem;                                 // 名前とテキストの間の余白
+    text-align: center;
   }
 
   &-text {
     font-size: 1rem;
-    line-height: 2;                   // 行高
-    text-align: left;                 // 左揃え
+    line-height: 1.8;                                    // 行高
+    text-align: left;
 
     // カード
-    background-color: rgba(154, 154, 154, 0.232); // 背景（透ける）
+    background-color: rgba(154, 154, 154, 0.232);      // 背景（透ける）
     border-radius: 10px;
     padding: 2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.416);  // 影
-    width: 100%;                                    // 最大幅を設定
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.416);       // 影
+    width: 100%;                                         // 最大幅
   }
 
   &-item {
@@ -81,6 +81,59 @@
 
     ul {
       padding-left: 1rem;
+
+      li {
+        margin-bottom: 0.7rem;
+
+        .hobby-title {
+          font-size: 1.1rem;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  // レスポンシブ（携帯）------------------------------
+  @media screen and (max-width: 576px) {
+    &-heading {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &-icon-wrapper {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 0.8rem;
+    }
+
+    &-name {
+      font-size: 1rem;
+    }
+
+    &-text {
+      font-size: 0.8rem;
+      line-height: 1.6;  // 行高
+      padding: 1.5rem;
+    }
+
+    &-item {
+      margin-bottom: 1rem;
+
+      h3 {
+        font-size: 1rem;
+      }
+
+      ul {
+        li {
+          margin-bottom: 0.5rem;
+
+          .hobby-title {
+            font-size: 0.9rem;
+            font-weight: bold;
+          }
+
+        }
+      }
     }
   }
 }

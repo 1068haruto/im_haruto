@@ -6,16 +6,16 @@
   color: #fff;
 
   &::before {
-    content: "";                                      /* 擬似要素を空に設定 */
-    position: absolute;                               /* 絶対位置で配置 */
-    top: 0;                                           /* 上端からの位置 */
-    left: 0;                                          /* 左端からの位置 */
-    width: 100%;                                      /* 幅(親基準) */
-    height: 100%;                                     /* 高さ(親基準) */
+    content: "";                                      // 擬似要素を空に
+    position: absolute;                               // 絶対位置
+    top: 0;                                           // 上端からの位置
+    left: 0;                                          // 左端からの位置
+    width: 100%;                                      // 幅(親基準) 
+    height: 100%;                                     // 高さ(親基準) 
     background-image: url('/bg-images/contact.jpg');
-    background-size: cover;                           /* 背景画像をカバーする */
-    background-position: center;                      /* 画像の中心に配置 */
-    background-repeat: no-repeat;                     /* 背景画像を繰り返さない */
+    background-size: cover;                           // 背景画像をカバーする
+    background-position: center;                      // 画像の中心に配置
+    background-repeat: no-repeat;                     // 背景画像を繰り返さない
     filter: brightness(0.3);
     z-index: -1;
   }
@@ -31,47 +31,76 @@
   }
 
   form {
-    max-width: 600px; // フォームの最大幅
-    margin: 0 auto;   // フォームを中央に配置
+    max-width: 700px;                                 // 最大幅
+    margin: 0 auto;                                   // フォームを中央に配置
 
     // カード
     background-color: rgba(154, 154, 154, 0.287);
     border-radius: 10px;
     padding: 2rem 2rem 1rem 2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.416);  // 影
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.416);    // 影
     width: 47%;
 
     input, textarea {
-      width: 100%;              // 入力フィールドとテキストエリアの幅
+      width: 100%;                                    // 入力フィールドとテキストエリアの幅
       padding: 0.75rem;
       margin: 0.5rem 0;
       border: 1px solid #ccc;
       border-radius: 6px;
       font-size: 1rem;
-      resize: vertical;         // 縦方向のサイズ変更を許可
+      resize: vertical;                               // 縦方向のサイズ変更を許可
     }
 
     button {
       padding: 0.6rem 1.5rem;
-      border: none;                             // ボタンの境界線をなしにする
+      border: none;                                   // ボタンの境界線をなしにする
       background-color: #4a5568;
       color: white;
       font-size: 1rem;
       border-radius: 10px;
-      cursor: pointer;                          // カーソルをポインターに変える
+      cursor: pointer;                                // カーソルをポインターに変える
 
       &:hover {
         background-color: #2d3748;
         border: 0.5px solid #ccc;
         transform: scale(0.95);
-        transition: transform 0.25s ease-in-out; // トランスフォームをなめらかに
+        transition: transform 0.25s ease-in-out;      // トランスフォームをなめらかに
       }
     }
 
     .status {
       margin-top: 1rem;
       font-size: 0.9rem;
-      color: #555;
+      color: white;
+    }
+  }
+
+  // レスポンシブ（携帯）------------------------------
+  @media screen and (max-width: 767px) {
+    padding: 3rem 1rem;
+
+    &-heading {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      padding: 1.4rem 1.4rem 0.7rem 1.4rem;
+      width: 95%;
+    }
+
+    input,
+    textarea {
+      font-size: 0.8rem;
+    }
+
+    .status {
+      font-size: 0.8rem;
     }
   }
 }

@@ -32,11 +32,11 @@ const SelfIntro: React.FC = () => {
             <h3>趣味</h3>
             <ul>
               <li>
-                <strong>映画鑑賞</strong><br />
+                <span className={styles["hobby-title"]}>映画鑑賞</span><br />
                 ストーリー構成や撮り方、表情や言葉を深く考察することが好きです。
               </li>
               <li>
-                <strong>散歩</strong><br />
+                <span className={styles["hobby-title"]}>散歩</span><br />
                 季節の変化や街の様子を感じながら、歩くことが好きです。
               </li>
             </ul>

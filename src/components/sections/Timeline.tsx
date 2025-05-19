@@ -13,12 +13,12 @@ const timelineData = [
   {
     status: "関西外国語大学",
     years: "2015-2020",
-    details: "語学を中心に学びました。4年生時には休学し、オーストラリア シドニーのホテルにて、コンシェルジュとして3ヶ月間勤務しました。"
+    details: "言語を中心に学びました。4年生時は休学し、オーストラリア シドニーのホテルにて、コンシェルジュとして3ヶ月間勤務しました。"
   },
   {
-    status: "株式会社ドッドウエル ビー・エム・エス",
+    status: "(株)ドッドウエル ビー・エム・エス",
     years: "2020-2024",
-    details: "主にマンションへ導入する防犯カメラシステムの新規開拓及びルート営業に4年間従事しました。"
+    details: "主に防犯カメラシステムを商材とし、マンション管理会社やその他法人に対する新規開拓及びルート営業に4年間従事しました。"
   },
   {
     status: "現在",
@@ -71,10 +71,10 @@ const Timeline: React.FC = () => {
           >
             <div className={styles["timeline-content"]}>
               <h3>
-                <span className={styles.statusText}>{item.status}</span><br />
-                <span>{item.years}</span>
+                <span className={styles.status}>{item.status}</span><br />
+                <span className={styles.year}>{item.years}</span>
               </h3>
-              <p>{item.details}</p>
+              <p className={styles.details}>{item.details}</p>
             </div>
           </motion.div>
         ))}

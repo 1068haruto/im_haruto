@@ -5,13 +5,14 @@
   min-height: 100vh;
   color: #fff;
 
+  // 背景
   &::before {
-    content: "";                                        // 擬似要素を空に
-    position: absolute;                                 // 絶対位置で配置
-    top: 0;                                             // 上端からの位置
-    left: 0;                                            // 左端からの位置
-    width: 100%;                                        // 幅(親基準)
-    height: 100%;                                       // 高さ(親基準)
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('/bg-images/portfolio.jpg');
     background-size: cover;                             // 背景画像をカバーする
     background-position: center;                        // 画像の中心に配置
@@ -30,7 +31,6 @@
     display: flex;
     justify-content: center;
     gap: 3rem;
-    flex-wrap: wrap;
 
     .app-image {
       width: 300px;
@@ -65,14 +65,13 @@
       }
 
       &-description {
-        margin-bottom: 0.75rem;
+        margin-bottom: 1rem;
         font-size: 1rem;
       }
 
       .link-icons {
         display: flex;
         gap: 0.75rem;
-        margin-top: 1rem;
 
         .link-icon {
           display: flex;
@@ -87,11 +86,14 @@
           // リンクを囲むカード
           background-color: rgba(154, 154, 154, 0.279);
           border-radius: 10px;
-          padding: 0rem 1rem;
+          padding: 0.2rem 1rem;
+
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.416);
 
-          svg {
-            font-size: 1.2rem;
+          img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain; // 画像のアスペクト比を維持
           }
 
           &:hover {
@@ -113,7 +115,8 @@
         }
 
         th {
-          font-weight: 400;
+          font-weight: bold;
+          background-color: rgba(154, 154, 154, 0.279);
         }
       }
     }
@@ -130,5 +133,56 @@
     max-height: 0;
     opacity: 0;
     pointer-events: none;
+  }
+
+  // レスポンシブ（携帯）------------------------------
+  @media screen and (max-width: 576px) {
+    &-heading {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .app-container {
+      gap: 1.5rem;
+    }
+
+    .app-detail-wrapper {
+      .app-detail {
+        &-title {
+          font-size: 1.2rem;
+          margin-bottom: 0.5rem;
+        }
+
+        &-description {
+          margin-bottom: 0.8rem;
+          font-size: 0.8rem;
+        }
+
+        .link-icons {
+          gap: 0.5rem;
+          font-size: 0.8rem;
+
+          .link-icon {
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+
+            img {
+              width: 18px;
+              height: 18px;
+            }
+          }
+        }
+
+        .tech-table {
+          font-size: 0.8rem;
+
+          td {
+            &:first-child {        // 最初の<td>要素（カテゴリ名）
+              white-space: nowrap; // テキストの折り返しをしない
+            }
+          }
+        }
+      }
+    }
   }
 }

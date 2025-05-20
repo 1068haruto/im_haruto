@@ -28,8 +28,7 @@
 }
 
 .title {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
   margin-bottom: 5rem;
 }
@@ -42,7 +41,7 @@
 
 .scroll-indicator {
   position: absolute;
-  bottom: 3rem;
+  bottom: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,4 +58,27 @@
   border-right: 2px solid #fff;  // 右側の線
   border-bottom: 2px solid #fff; // 下側の線
   transform: rotate(45deg);        // 45度回転させて矢印の形にする
+}
+
+// レスポンシブ（携帯）------------------------------
+@media screen and (max-width: 767px) {
+
+  .top {
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .paragraph {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .scroll-indicator {
+    bottom: 9rem;
+  }
 }

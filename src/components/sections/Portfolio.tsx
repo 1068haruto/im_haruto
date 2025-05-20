@@ -95,13 +95,13 @@ const Portfolio: React.FC = () => {
             <div className={styles['link-icons']}>
               {hoveredApp.site && (
                 <a href={hoveredApp.site} target="_blank" rel="noopener noreferrer" className={styles['link-icon']}>
-                  <img src={hoveredApp.icon} alt="App Link" width={20} height={20} />
+                  <img src={hoveredApp.icon} alt="App Link" />
                   <span>アプリを見る</span>
                 </a>
               )}
               {hoveredApp.github && (
-                <a href={hoveredApp.github} target="_blank" rel="noopener noreferrer" className={styles['link-icon']}>
-                  <img src="/icons/github.svg" alt="GitHub Link" width={20} height={20} />
+                <a href={hoveredApp.github} target="_blank" rel="noopener noreferrer" className={styles["link-icon"]}>
+                  <img src="/icons/github.svg" alt="GitHub Link" />
                   <span>GitHub</span>
                 </a>
               )}

@@ -6,15 +6,6 @@ import styles from "@/styles/sections/top.module.scss";
 const Top: React.FC = () => {
   return (
     <section id="top" className={styles.top}>
-      <motion.h1
-        className={styles.title}
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        春日晴都と申します
-      </motion.h1>
-
       <motion.p
         className={styles.paragraph}
         initial={{ opacity: 0, y: 30 }}

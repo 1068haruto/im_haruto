@@ -18,13 +18,13 @@ const SelfIntro: React.FC = () => {
             priority  // 優先的にロード
           />
         </div>
-        <p className={styles["selfintro-name"]}>春日 晴都（かすが はると・28歳）</p>
+        <p className={styles["selfintro-name"]}>春日 晴都</p>
         <div className={styles["selfintro-text"]}>
           <div className={styles["selfintro-item"]}>
             <h3>移住地</h3>
             <ul>
               <li>
-                <p>島根（地元）▶︎大阪（大学）▶︎千葉（社会人）▶︎愛知（社会人）▶︎島根（現在）</p>
+                <p>島根 ▶︎ 大阪 ▶︎ 千葉 ▶︎ 愛知 ▶︎ 島根 ▶︎ 東京</p>
               </li>
             </ul>
           </div>
@@ -33,7 +33,7 @@ const SelfIntro: React.FC = () => {
             <ul>
               <li>
                 <span className={styles["hobby-title"]}>映画鑑賞</span><br />
-                ストーリー構成や撮り方、表情や言葉を深く考察することが好きです。
+                ストーリー構成、撮り方、表情、言葉を深く考察することが好きです。
               </li>
               <li>
                 <span className={styles["hobby-title"]}>散歩</span><br />

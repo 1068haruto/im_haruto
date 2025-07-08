@@ -2,22 +2,18 @@
 import React, { useState } from "react";
 import styles from "@/styles/sections/business_card.module.scss";
 import Image from "next/image";
-import Timeline from "@/components/sections/Timeline";
-import Contact from "@/components/sections/Contact";
 import Skill from "@/components/sections/Skill";
+import Timeline from "@/components/sections/History";
 import Blog from "@/components/sections/Blog";
+import Contact from "@/components/sections/Contact";
 
 const BusinessCard: React.FC = () => {
-  /*
-    現在表示されているセクションを管理するState
-    'skill','history','blog','contact', または null (何も表示されていない状態)
-  */
+
+  // skill, history, blog, contact, or null(非表示状態)
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
-  /*
-    クリックされたセクションが既に表示されている場合は非表示にする（トグル機能）
-    そうでなければ、クリックされたセクションを表示する
-  */
+  // 指定されたsectionが表示中 → 非表示にする
+  // 指定されたsectionが非表示 → 表示する
   const handleSectionClick = (sectionName: string) => {
     setActiveSection(activeSection === sectionName ? null : sectionName);
   };
@@ -25,7 +21,6 @@ const BusinessCard: React.FC = () => {
   const isSectionActive = (sectionName: string) => activeSection === sectionName;
 
   return (
-    // activeSectionがnullでない場合に'active'クラスを追加
     <section id="business_card" className={`${styles.top} ${activeSection ? styles.active : ''}`}>
       <div className={`${styles["business-card"]} ${activeSection ? styles['business-card-moved'] : ''}`}>
         <div className={styles.basic}>
@@ -49,7 +44,7 @@ const BusinessCard: React.FC = () => {
           </div>
         </div>
 
-        {/* クリックされたものに対応して、activeSectionを'skill', 'timeline', 'blog', 'contact'のいずれかに設定 */}
+        {/* activeSectionを指定したセクション(skill, timeline, blog, contactのいずれか)に設定 */}
         <div className={styles.list}>
           <div onClick={() => handleSectionClick('skill')} style={{ cursor: 'pointer' }}>skill</div>
           <div onClick={() => handleSectionClick('timeline')} style={{ cursor: 'pointer' }}>history</div>
@@ -59,14 +54,14 @@ const BusinessCard: React.FC = () => {
       </div>
 
       {/* activeSectionに応じてコンポーネントを条件付きで表示 */}
-      {isSectionActive('timeline') && (
-        <div className={`${styles["section-container"]} ${styles['section-container-active']}`}>
-          <Timeline />
-        </div>
-      )}
       {isSectionActive('skill') && (
         <div className={`${styles["section-container"]} ${styles['section-container-active']}`}>
           <Skill />
+        </div>
+      )}
+      {isSectionActive('timeline') && (
+        <div className={`${styles["section-container"]} ${styles['section-container-active']}`}>
+          <Timeline />
         </div>
       )}
       {isSectionActive('blog') && (

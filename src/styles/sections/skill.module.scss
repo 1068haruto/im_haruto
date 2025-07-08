@@ -1,0 +1,13 @@
+.skill {
+  position: relative;
+  min-height: 80vh;
+  width: 500px;
+  color: #fff;
+
+  &-heading {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    text-align: left;
+  }
+}

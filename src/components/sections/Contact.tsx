@@ -4,18 +4,26 @@ import SectionHeading from "@/components/SectionHeading";
 import styles from "@/styles/sections/contact.module.scss";
 
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '', company: '' });  // 入力内容管理のための状態を作成
-  const [status, setStatus] = useState('');                                                     // フォーム送信管理のための状態を作成
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {      // 入力内容が変化したときに実行する関数
-    setFormData({ ...formData, [e.target.name]: e.target.value });                              // 既存のformDataの内容をコピーし、変更された入力欄のnameに対応する値を新しい入力値で上書き
+  // 入力内容管理のための状態を作成
+  const [formData, setFormData] = useState({ name: '', email: '', message: '', company: '' });
+
+  // フォーム送信管理のための状態を作成
+  const [status, setStatus] = useState('');
+
+  // 入力内容が変化したときに実行
+  // 既存のformDataの内容をコピーし、変更された入力欄のnameに対応する値を新しい入力値で上書き
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {                                          // フォーム送信時に実行する非同期関数
+  // フォーム送信時に実行
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('送信しています...');
 
-    const res = await fetch('/api/contact', {                                                   // サーバーにデータを送信する
+    // サーバーにデータを送信
+    const res = await fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
@@ -31,7 +39,7 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact" className={`section-anchor-offset ${styles.contact}`}>
-      <SectionHeading className={styles['contact-heading']}>お問い合わせ</SectionHeading>
+      <SectionHeading className={styles['contact-heading']}>Contact</SectionHeading>
       <p>お問い合わせは、下記フォームよりお願いいたします。</p>
       <form onSubmit={handleSubmit}>
         <input name="name" type="text" placeholder="お名前" value={formData.name} onChange={handleChange} required />

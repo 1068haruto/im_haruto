@@ -7,7 +7,7 @@ import { ReactNode } from "react"; // 追加
 
 export const metadata: Metadata = {
   title: "im_haruto",
-  description: "自己紹介ページ",
+  description: "名刺",
 };
 
 interface RootLayoutProps {
@@ -18,9 +18,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="ja">
       <body>
-        <Header />
         <main>{children}</main>
-        <Footer />
       </body>
     </html>
   );

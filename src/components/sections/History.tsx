@@ -8,12 +8,12 @@ const historyData = [
   {
     status: "開星高校",
     years: "2012-2015",
-    details: ""
+    details: "Student"
   },
   {
     status: "関西外国語大学",
     years: "2015-2020",
-    details: ""
+    details: "Student"
   },
   {
     status: "専門商社",
@@ -23,7 +23,7 @@ const historyData = [
   {
     status: "プログラミングスクール RUNTEQ",
     years: "2024-2025",
-    details: ""
+    details: "Student"
   },
   {
     status: "自社開発企業",

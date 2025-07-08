@@ -1,0 +1,85 @@
+.history {
+  position: relative;
+  min-height: 80vh;
+  width: 500px;
+  color: #fff;
+
+  &-heading {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  &-container {
+    position: relative;
+  }
+
+  // 縦のライン
+  &-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;   // 親の下端まで
+    left: 1rem;  // 丸アイコンと調整のため固定位置
+    width: 2px;
+    background-color: #ccc;
+    transform: translateX(0);
+    z-index: 1;
+  }
+
+  &-item {
+    position: relative;
+    display: flex;
+    align-items: center;  // 縦
+    flex-direction: row;
+    margin: 0rem 1rem 1rem 3rem;
+
+    // 丸いアイコン
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;                         // 親の中央
+      left: -1.95rem;
+      transform: translate(-50%, -50%); // アイコンの中心を親の中心に
+      width: 14px;
+      height: 14px;
+      background-color: #006afe;
+      border-radius: 50%;
+      z-index: 2;
+      border: 1px solid white;
+    }
+  }
+
+  // 各経歴の内容
+  &-content {
+    display: flex;
+    align-items: center;             // 子要素(.yearと.text-group)を縦の中央に
+    justify-content: space-between;  // .yearを左端、.text-groupを右端に
+    width: 100%;
+    background-color: rgba(154, 154, 154, 0.287);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.416);
+    padding: 0.6rem 0.5rem;
+
+    .text-group {
+      display: flex;
+      flex-direction: column;  // status と details を縦並び
+      text-align: right;       // 全テキストを右寄せ
+
+      .year {
+        font-size: 0.9rem;
+        flex-shrink: 0;     // サイズが縮まないように
+      }
+
+      // 所属
+      .status {
+        font-size: 1rem;
+      }
+
+      // 職種
+      .details {
+        font-size: 1rem;
+      }
+    }
+  }
+}

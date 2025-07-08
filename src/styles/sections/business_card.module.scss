@@ -9,14 +9,13 @@
   z-index: 1;
   color: #fff;
   background-color: #222a4f;
-  transition: all 2s ease-in-out; // レイアウト変更を滑らかにする
 
-  // skill, history, blog, contactセクションが表示された時の親要素のスタイル
+  // 各セクション（skill, history, blog, contact）表示時
   &.active {
     flex-direction: row;     // 横
     align-items: center;     // 縦
     justify-content: center; // 横
-    gap: 2rem;               // カードと表示セクションの間のスペース
+    gap: 2rem;               // 名刺と表示セクションの間
   }
 }
 
@@ -36,7 +35,7 @@
   .basic {
     display: flex;
     flex-direction: column;
-    align-items: center;    // 横の中央
+    align-items: center;  // 横
     width: 100%;
   }
 
@@ -44,13 +43,13 @@
     width: 125px;
     height: 125px;
     border-radius: 50%;  // 円形に
-    overflow: hidden;    // 画像が枠からはみ出ないように
+    overflow: hidden;    // 画像が枠から出ないように
     margin-bottom: 2rem;
 
     .icon {
       width: 100%;
       height: 100%;
-      object-fit: cover; // 要素に合わせてトリミング
+      object-fit: cover; // 要素に合わせてトリム
     }
   }
 
@@ -90,17 +89,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 0;         // デフォルトでは幅を0にして非表示
-  opacity: 0;       // 透明度も0にして非表示
-  overflow: hidden; // 内容がはみ出さないように
-  transition: all 3s ease-in-out; // 表示を滑らかに
+  width: 0;             // デフォルトを0に（非表示）
+  opacity: 0;           // デフォルトを0に（非表示）
+  overflow: hidden;     // 内容が出さないように
 
-  // セクションが表示された時のスタイル
+  // セクション表示時のスタイル
   &.section-container-active {
-    width: 90%;       // 適切な幅を設定
+    width: 90%;
     height: 90%;
     max-width: 600px; // 最大幅
     opacity: 1;       // 表示
     margin: 5rem 0rem;
+    transform: translateX(0);
   }
 }

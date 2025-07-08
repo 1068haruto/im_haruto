@@ -1,34 +1,42 @@
 .top {
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;  // 縦
-  align-items: center;      // 横
+  flex-direction: column;  // 縦
+  align-items: center;     // 縦
+  justify-content: center; // 横
   text-align: center;
   position: relative;
   z-index: 1;
-  min-height: 100vh;
   color: #fff;
   background-color: #222a4f;
+  transition: all 2s ease-in-out; // レイアウト変更を滑らかにする
+
+  // skill, history, blog, contactセクションが表示された時の親要素のスタイル
+  &.active {
+    flex-direction: row;     // 横
+    align-items: center;     // 縦
+    justify-content: center; // 横
+    gap: 2rem;               // カードと表示セクションの間のスペース
+  }
 }
 
-
 .business-card {
-  width: 300px;
-  height: 500px;
-  background-color: white;
-  border: 1px solid #ccc;  // 輪郭
-  border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  color: black;
   display: flex;
   flex-direction: column;
-  align-items: center;  // 横の中央
+  align-items: center;
+  width: 300px;
+  height: 500px;
   padding: 3rem 2rem;
+  color: black;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
   .basic {
     display: flex;
     flex-direction: column;
-    align-items: center;  //縦の中央
+    align-items: center;    // 横の中央
     width: 100%;
   }
 
@@ -74,5 +82,25 @@
     justify-content: space-around;
     width: 100%;
     margin-bottom: 2rem;
+  }
+}
+
+// 右側に表示されるセクション(skill, timline, blog, contact)のコンテナ
+.section-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0;         // デフォルトでは幅を0にして非表示
+  opacity: 0;       // 透明度も0にして非表示
+  overflow: hidden; // 内容がはみ出さないように
+  transition: all 3s ease-in-out; // 表示を滑らかに
+
+  // セクションが表示された時のスタイル
+  &.section-container-active {
+    width: 90%;       // 適切な幅を設定
+    height: 90%;
+    max-width: 600px; // 最大幅
+    opacity: 1;       // 表示
+    margin: 5rem 0rem;
   }
 }

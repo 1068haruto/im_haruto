@@ -1,5 +1,5 @@
 import React from "react";
-import Top from "@/components/sections/Top";
+import BusinessCard from "@/components/sections/BusinessCard";
 import SelfIntro from "@/components/sections/SelfIntro";
 import Timeline from "@/components/sections/Timeline";
 import Portfolio from "@/components/sections/Portfolio";
@@ -8,7 +8,7 @@ import Contact from "@/components/sections/Contact";
 const Home: React.FC = () => {
   return (
     <main>
-      <Top />
+      <BusinessCard />
       <SelfIntro />
       <Timeline />
       <Portfolio />

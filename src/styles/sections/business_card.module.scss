@@ -1,0 +1,78 @@
+.top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  // 縦
+  align-items: center;      // 横
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  color: #fff;
+  background-color: #222a4f;
+}
+
+
+.business-card {
+  width: 300px;
+  height: 500px;
+  background-color: white;
+  border: 1px solid #ccc;  // 輪郭
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  // 横の中央
+  padding: 3rem 2rem;
+
+  .basic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  //縦の中央
+    width: 100%;
+  }
+
+  .icon-wrapper {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;  // 円形に
+    overflow: hidden;    // 画像が枠からはみ出ないように
+    margin-bottom: 2rem;
+
+    .icon {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; // 要素に合わせてトリミング
+    }
+  }
+
+  .text-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+
+    .occupation {
+      margin-bottom: 1rem;
+    }
+
+    .name {
+      font-size: 1.8rem;
+    }
+
+    .name-en {
+      font-size: 0.9rem;
+      margin-top: -0.3rem;
+
+      .last-name {
+        margin-right: 1.3rem;
+      }
+    }
+  }
+
+  .list {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}

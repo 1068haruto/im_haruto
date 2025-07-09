@@ -64,7 +64,7 @@ const History: React.FC = () => {
 
   return (
     <section id="history" className={`section-anchor-offset ${styles.history}`}>
-      <SectionHeading className={styles["history-heading"]}>history</SectionHeading>
+      <SectionHeading className={styles["history-heading"]}>History</SectionHeading>
       <div className={styles["history-container"]} ref={ref}>
 
         {/* 縦ライン */}

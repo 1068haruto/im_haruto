@@ -1,8 +1,9 @@
 .contact {
   min-height: 80vh;
   position: relative;
-  z-index: 1;
+  width: 550px;
   padding: 3rem 1rem;
+  z-index: 1;
   color: #fff;
 
   &-heading {
@@ -18,8 +19,6 @@
   }
 
   form {
-    max-width: 600px;
-
     // カード
     width: 95%;
     padding: 1.4rem 1.4rem 0.7rem 1.4rem;

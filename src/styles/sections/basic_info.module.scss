@@ -1,0 +1,68 @@
+.basicInfo {
+  min-height: 80vh;
+  position: relative;
+  width: 550px;
+  padding: 3rem 1rem 3rem 1rem;
+  z-index: 1;
+  color: #fff;
+
+  &-heading {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  // 横
+  }
+
+  &-card {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    text-align: left;
+    line-height: 1.6;
+    font-size: 0.8rem;
+
+    // カード
+    background-color: rgba(154, 154, 154, 0.232);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.416);
+
+    // 大タイトルと右側の内容を 横並び & 縦中央に
+    display: flex;
+    align-items: center;
+  }
+
+  // 大タイトル
+  .main-title {
+    width: 48px;
+    margin-right: 1rem;
+    flex-shrink: 0;  // 大タイトルが縮まないように
+
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .content-group {
+    flex-direction: column;
+  }
+
+  // 小タイトル と その内容（趣味のみで使用）
+  .sub-item {
+    margin-bottom: 1rem;
+    &:last-child {
+      margin-bottom: 0;  // 最後の項目は下マージンなし
+    }
+
+    // 小タイトル
+    .sub-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+  }
+}

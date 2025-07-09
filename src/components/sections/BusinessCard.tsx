@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import styles from "@/styles/sections/business_card.module.scss";
 import Image from "next/image";
+import BasicInfo from "@/components/sections/BasicInfo";
 import Skill from "@/components/sections/Skill";
 import Timeline from "@/components/sections/History";
 import Blog from "@/components/sections/Blog";
@@ -24,7 +25,11 @@ const BusinessCard: React.FC = () => {
     <section id="business_card" className={`${styles.top} ${activeSection ? styles.active : ''}`}>
       <div className={`${styles["business-card"]} ${activeSection ? styles['business-card-moved'] : ''}`}>
         <div className={styles.basic}>
-          <div className={styles["icon-wrapper"]}>
+          <div
+            className={styles["icon-wrapper"]}
+            onClick={() => handleSectionClick('BasicInfo')}
+            style={{ cursor: 'pointer' }}
+          >
             <Image
               src="/icons/me.jpg"
               alt="自分のアイコン"
@@ -44,7 +49,7 @@ const BusinessCard: React.FC = () => {
           </div>
         </div>
 
-        {/* activeSectionを指定したセクション(skill, timeline, blog, contactのいずれか)に設定 */}
+        {/* activeSectionを指定したセクション(BasicInfo, skill, timeline, blog, contactのいずれか)に設定 */}
         <div className={styles.list}>
           <div onClick={() => handleSectionClick('skill')} style={{ cursor: 'pointer' }}>skill</div>
           <div onClick={() => handleSectionClick('timeline')} style={{ cursor: 'pointer' }}>history</div>
@@ -54,6 +59,11 @@ const BusinessCard: React.FC = () => {
       </div>
 
       {/* activeSectionに応じてコンポーネントを条件付きで表示 */}
+      {isSectionActive('BasicInfo') && (
+        <div className={`${styles["section-container"]} ${styles['section-container-active']}`}>
+          <BasicInfo />
+        </div>
+      )}
       {isSectionActive('skill') && (
         <div className={`${styles["section-container"]} ${styles['section-container-active']}`}>
           <Skill />

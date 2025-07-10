@@ -1,3 +1,12 @@
+// 変数定義
+$bg-color: #222a4f;
+$bg-color-card: white;
+$border-color-default: #ccc;
+$border-color-changed: #50a3da;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$text-color: black;
+$text-color-name-en: rgb(92, 92, 92);;
+
 .top {
   min-height: 100vh;
   display: flex;
@@ -7,10 +16,9 @@
   text-align: center;
   position: relative;
   z-index: 1;
-  color: #fff;
-  background-color: #222a4f;
+  background-color: $bg-color;
 
-  // 各セクション（skill, history, blog, contact）表示時
+  // 各セクション（basic_info, skill, history, blog, contact）表示時
   &.active {
     flex-direction: row;     // 横
     align-items: center;     // 縦
@@ -26,11 +34,11 @@
   width: 300px;
   height: 500px;
   padding: 3rem 2rem;
-  color: black;
-  background-color: white;
-  border: 1px solid #ccc;
+  color: $text-color;
+  background-color: $bg-color-card;
+  border: 1px solid $border-color-default;
   border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px $shadow-color;
 
   .basic {
     display: flex;
@@ -42,14 +50,26 @@
   .icon-wrapper {
     width: 125px;
     height: 125px;
-    border-radius: 50%;  // 円形に
-    overflow: hidden;    // 画像が枠から出ないように
+    border: 3px solid transparent; // 透明
+    border-radius: 50%;
+    overflow: hidden;              // 画像が枠から出ないように
     margin-bottom: 2rem;
+    cursor: pointer;
 
     .icon {
       width: 100%;
       height: 100%;
       object-fit: cover; // 要素に合わせてトリム
+    }
+
+    // セクション表示中
+    &.activeBorder {
+      border-color: $border-color-changed;
+    }
+
+    &:hover {
+      border-color: $border-color-changed;
+      transition: border-color 0.3s ease-in-out;
     }
   }
 
@@ -69,6 +89,7 @@
     .name-en {
       font-size: 0.9rem;
       margin-top: -0.3rem;
+      color: $text-color-name-en;
 
       .last-name {
         margin-right: 1.3rem;
@@ -82,22 +103,39 @@
     width: 100%;
     margin-bottom: 2rem;
   }
+
+  .text-button {
+    border: 2px solid transparent; //透明
+    border-radius: 50px;
+    padding: 3px 10px;
+    cursor: pointer;
+
+    // セクション表示中
+    &.activeBorder {
+      border-color: $border-color-changed;
+    }
+
+    &:hover {
+      border-color: $border-color-changed;
+      transition: border-color 0.3s ease-in-out;
+    }
+  }
 }
 
-// 右側に表示されるセクション(skill, timline, blog, contact)のコンテナ
+// 右側に表示するセクション(skill, timline, blog, contact)のコンテナ
 .section-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 0;             // デフォルトを0に（非表示）
-  opacity: 0;           // デフォルトを0に（非表示）
-  overflow: hidden;     // 内容が出さないように
+  width: 0;             // デフォルトは非表示
+  opacity: 0;           // デフォルトは非表示
+  overflow: hidden;     // 内容がはみ出ないように
 
-  // セクション表示時のスタイル
+  // セクション表示中
   &.section-container-active {
     width: 90%;
     height: 90%;
-    max-width: 600px; // 最大幅
+    max-width: 600px;
     opacity: 1;       // 表示
     margin: 5rem 0rem;
     transform: translateX(0);

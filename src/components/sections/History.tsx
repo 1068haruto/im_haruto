@@ -16,7 +16,7 @@ const historyData = [
     details: "Student"
   },
   {
-    status: "専門商社",
+    status: "セキュリティ専門商社",
     years: "2020-2024",
     details: "Sales"
   },
@@ -26,7 +26,7 @@ const historyData = [
     details: "Student"
   },
   {
-    status: "自社開発企業",
+    status: "自社開発SaaSベンダー",
     years: "2025-",
     details: "Engineer"
   }
@@ -94,6 +94,7 @@ const History: React.FC = () => {
             </div>
           </motion.div>
         ))}
+
       </div>
     </section>
   );

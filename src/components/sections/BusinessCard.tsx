@@ -25,10 +25,10 @@ const BusinessCard: React.FC = () => {
     <section id="business_card" className={`${styles.top} ${activeSection ? styles.active : ''}`}>
       <div className={`${styles["business-card"]} ${activeSection ? styles['business-card-moved'] : ''}`}>
         <div className={styles.basic}>
+          {/* BasicInfo表示中は、styles.activeBorderを適用 */}
           <div
-            className={styles["icon-wrapper"]}
+            className={`${styles["icon-wrapper"]} ${isSectionActive('BasicInfo') ? styles.activeBorder : ''}`}
             onClick={() => handleSectionClick('BasicInfo')}
-            style={{ cursor: 'pointer' }}
           >
             <Image
               src="/icons/me.jpg"
@@ -49,13 +49,34 @@ const BusinessCard: React.FC = () => {
           </div>
         </div>
 
-        {/* activeSectionを指定したセクション(BasicInfo, skill, timeline, blog, contactのいずれか)に設定 */}
+        {/* 該当セクションがアクティブな場合、各text-buttonに styles.activeBorderを追加 */}
         <div className={styles.list}>
-          <div onClick={() => handleSectionClick('skill')} style={{ cursor: 'pointer' }}>skill</div>
-          <div onClick={() => handleSectionClick('timeline')} style={{ cursor: 'pointer' }}>history</div>
-          <div onClick={() => handleSectionClick('blog')} style={{ cursor: 'pointer' }}>blog</div>
+          <div
+            className={`${styles["text-button"]} ${isSectionActive('skill') ? styles.activeBorder : ''}`}
+            onClick={() => handleSectionClick('skill')}
+          >
+            skill
+          </div>
+          <div
+            className={`${styles["text-button"]} ${isSectionActive('timeline') ? styles.activeBorder : ''}`}
+            onClick={() => handleSectionClick('timeline')}
+          >
+            history
+          </div>
+          <div
+            className={`${styles["text-button"]} ${isSectionActive('blog') ? styles.activeBorder : ''}`}
+            onClick={() => handleSectionClick('blog')}
+          >
+            blog
+          </div>
         </div>
-        <div onClick={() => handleSectionClick('contact')} style={{ cursor: 'pointer' }}>contact</div>
+        <div
+          className={`${styles["text-button"]} ${isSectionActive('contact') ? styles.activeBorder : ''}`}
+          onClick={() => handleSectionClick('contact')}
+        >
+          contact
+        </div>
+
       </div>
 
       {/* activeSectionに応じてコンポーネントを条件付きで表示 */}
